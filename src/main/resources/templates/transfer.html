@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <span data-th-text="${account}"></span> -->
+    <h2>Your transfer of $<span data-th-text="${account.amount}"></span> from</h2>
+     <!-- withdraw model model -->
+    <h2><span data-th-text="${acc.name}"></span>(<span data-th-text="${account.fromAccountId}"></span>) to</h2>
+    <!-- deposit model model -->
+    <h2><span data-th-text="${acc1.name}"></span>(<span data-th-text="${account.toAccountId}"></span>) </h2>
+    <h2>is successful.</h2>
+    <br>
+    <!-- add transactio id -->
+    <h2>Transaction id is<span data-th-text="${account.transactionId}"></span></h2>
+</body>
+</html>

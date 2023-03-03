@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fund Transfer</h1>
+    <!-- <span data-th-text="${session.totalOrder}"/> -->
+    <span data-th-text="${session.errors}"/>
+    <form action="#" data-th-action="@{/transfer}" method="Post" data-th-object="${account}"> 
+        <table>
+            <tr>
+                <td>From Account:</td>
+                <td>
+                    <select name="from" data-th-field="*{fromAccountId}">
+                        <option value="V9L3Jd1BBI">fred(V9L3Jd1BBI)</option>
+                        <option value="fhRq46Y6vB">barney(fhRq46Y6vB)</option>
+                        <option value="uFSFRqUpJy">wilma(uFSFRqUpJy)</option>
+                        <option value="ckTV56axff">betty(ckTV56axff)</option>
+                        <option value="Qgcnwbshbh">pebbles(Qgcnwbshbh)</option>
+                        <option value="if9l185l18">bambam(if9l185l18)</option>
+                        <option value="if9l118">err</option>
+                </td>
+            </tr>
+
+            <tr>
+                <td>To Account:</td>
+                <td>
+                    <select name="to" data-th-field="*{toAccountId}">
+                        <option value="V9L3Jd1BBI">fred(V9L3Jd1BBI)</option>
+                        <option value="fhRq46Y6vB">barney(fhRq46Y6vB)</option>
+                        <option value="uFSFRqUpJy">wilma(uFSFRqUpJy)</option>
+                        <option value="ckTV56axff">betty(ckTV56axff)</option>
+                        <option value="Qgcnwbshbh">pebbles(Qgcnwbshbh)</option>
+                        <option value="if9l185l18">bambam(if9l185l18)</option>
+                        <option value="if9l118">err</option>
+                </td>
+            </tr>
+                <td>Amount:</td>
+                <td>
+                    <input type="number" min="10" data-th-field="*{amount}" >
+                </td>
+            </tr>
+            </tr>
+                <td>Comments:</td>
+                <td>
+                    <textarea rows="10" cols="50" name="comment"></textarea>
+                </td>
+            </tr>
+            </tr>
+                <td>
+                    <input type="submit" value="Transfer">
+                </td>
+            </tr> 
+        </table>
+            
+    </form>
+    <h3>Error Message:</h3>
+    <div data-th-if="${session.error}">
+            <div data-th-each="error : ${session.error}">
+                <p><span data-th-text="${error}"></span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
